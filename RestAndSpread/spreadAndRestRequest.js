@@ -20,7 +20,15 @@ const requestBody = {
 
 const adminCompleteProfile = { ...adminSkillz, ...adminUser };
 
+const adminProfileExtended = {
+  awards: ["Best Admin"],
+  lunchWalletBalance: 203,
+  clockedIn: true,
+  ...adminCompleteProfile,
+};
+
 const { password, ...withoutPassword } = adminUser;
 
 console.log(withoutPassword);
 console.log("AdminComplete", adminCompleteProfile);
+console.log("AdminProfileExtended", adminProfileExtended);
