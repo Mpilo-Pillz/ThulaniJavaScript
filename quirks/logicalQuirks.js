@@ -22,3 +22,8 @@ console.log(2 && 2); // 2
 console.log(2 || 2); // 2
 console.log(2 && 0); // 0
 console.log(2 || 0); // 2
+
+console.log(true && 0); // 0
+console.log(false && true); // false
+console.log(true && false); // false
+console.log(true && ""); // ''
