@@ -1,3 +1,6 @@
+/**
+ * A factory function is a function that returns another function.
+ * */
 function calculateTax(tax) {
   return function (amount) {
     return amount * tax;
