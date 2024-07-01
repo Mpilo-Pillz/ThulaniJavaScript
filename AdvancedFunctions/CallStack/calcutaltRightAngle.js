@@ -14,3 +14,9 @@ const isRightAngle = (a, b, c) => square(a) + square(b) === square(c);
 console.log(isRightAngle(3, 4, 5))
 console.log(isRightAngle(6, 8, 10))
 console.log(isRightAngle(1, 2, 3))
+console.log("=================Tax=============")
+
+const calculateTax = (tax) => (amount) => multiply(tax, amount)
+
+calculateVAT = calculateTax(0.15)
+console.log("VAT is ", calculateVAT(1000000));
