@@ -19,4 +19,6 @@ console.log("=================Tax=============")
 const calculateTax = (tax) => (amount) => multiply(tax, amount)
 
 calculateVAT = calculateTax(0.15)
+calculateIncomeTax = calculateTax(0.45)
 console.log("VAT is ", calculateVAT(1000000));
+console.log("Income tax is ", calculateIncomeTax(120000));
