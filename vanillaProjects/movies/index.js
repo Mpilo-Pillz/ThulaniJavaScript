@@ -1,4 +1,4 @@
-const apiKey = "";
+const apiKey = secret;
 const imdbID = "tt0848228";
 const fetchData = async (searchTerm) => {
     const movies = await fetch(
@@ -13,17 +13,7 @@ fecthMovieDetails = async () => {
     console.log("Movies data", await movies.json());
 };
 
-const debounce = (func, delay = 1000) => {
-    let timeoutId;
-    return (...args) => {
-        if (timeoutId) {
-            clearTimeout(timeoutId);
-        }
-        timeoutId = setTimeout(() => {
-            func.apply(null, args);
-        }, delay);
-    };
-};
+
 
 const onInput = (event) => {
     fetchData(event.target.value);
