@@ -1,22 +1,29 @@
 const apiKey = secret;
 const imdbID = "tt0848228";
+
 const fetchData = async (searchTerm) => {
-    const movies = await fetch(
+    const response = await fetch(
         `http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`
     );
+    const data = await response.json()
+    return data.Search
 };
 
 fecthMovieDetails = async () => {
-    const movies = await fetch(
+    const response = await fetch(
         `http://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}`
     );
-    console.log("Movies data", await movies.json());
+    console.log("Movies data", await response.json());
+
+    const data = await response.json()
+    return data.Search
 };
 
 
 
-const onInput = (event) => {
-    fetchData(event.target.value);
+const onInput = async (event) => {
+    const movies = await fetchData(event.target.value);
+    console.log("Movies==>", movies)
 };
 
 const input = document.querySelector("input", 500);
