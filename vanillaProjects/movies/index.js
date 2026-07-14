@@ -38,8 +38,21 @@ const onInput = async (event) => {
     }
 };
 
-const input = document.querySelector("input", 500);
-input.addEventListener("input", debounce(onInput));
+const root = document.querySelector(".autocomplete")
+root.innerHTML = `
+<label><b>Search for a Movie</b></label>
+    <input type="text" class="input">
+    <div class="dropdown">
+      <div class="dropdown-menu">
+        <div class="dropdown-content results"></div>
+      </div>
+    </div>
+`
+const input = document.querySelector("input");
+const dropdown = document.querySelector(".dropdown")
+const resultsWrapper = document.querySelector(".results")
+
+input.addEventListener("input", debounce(onInput, 500));
 
 // REference:
 // let timeOutID;
