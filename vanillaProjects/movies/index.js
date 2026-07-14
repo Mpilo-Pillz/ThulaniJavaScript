@@ -6,6 +6,10 @@ const fetchData = async (searchTerm) => {
         `http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`
     );
     const data = await response.json()
+    if (data.Error) {
+        console.log("No movies found")
+        return []
+    }
     return data.Search
 };
 
