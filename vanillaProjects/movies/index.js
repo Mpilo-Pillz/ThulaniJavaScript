@@ -31,7 +31,7 @@ const fetchData = async (searchTerm) => {
 const onInput = async (event) => {
     const movies = await fetchData(event.target.value);
     const placeholder = "https://media.istockphoto.com/id/1980276924/vector/no-photo-thumbnail-graphic-element-no-found-or-available-image-in-the-gallery-or-album-flat.jpg?s=612x612&w=0&k=20&c=ZBE3NqfzIeHGDPkyvulUw14SaWfDj2rZtyiKv3toItk="
-    let moviePoster;
+
     resultsWrapper.innerHTML = ''
     dropdown.classList.add('is-active')
 
@@ -39,7 +39,7 @@ const onInput = async (event) => {
         const option = document.createElement('a')
         option.classList.add("dropdown-item")
         // debugger
-        moviePoster = movie.Poster.indexOf('http') === -1 ? moviePoster : movie.Poster
+        const moviePoster = movie.Poster.indexOf('http') === -1 ? placeholder : movie.Poster
         option.innerHTML = `
         <img src="${moviePoster}" />
         <p>${movie.Title}</p>
