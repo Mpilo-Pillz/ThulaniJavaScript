@@ -51,6 +51,7 @@ const onInput = async (event) => {
         `
         option.addEventListener('click', () => {
             dropdown.classList.remove('is-active')
+            input.value = movie.Title
         })
 
         resultsWrapper.appendChild(option);
